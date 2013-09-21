@@ -35,13 +35,6 @@ namespace AI_Problems {
         // iteration counter
         int iterationCount = 0;
 
-        // check if the current state is null
-        std::cout << "Is root state null? ";
-        if ((currState = currNode->getState()) == NULL) {
-            std::cout << "yes, terminating search\n";
-            return NULL;
-        }
-        std::cout << "no, continuing with search\n";
         // loop until:
         // 1) found goal state or
         // 2) stuck in local maximum
@@ -59,12 +52,13 @@ namespace AI_Problems {
             // check the size of the children state vector
             std::size_t kNumbOfChildren = childrenStates.size();
             std::cout << "number of children states? " << kNumbOfChildren << std::endl;
+            // if the number of children is zero, then return the current node (stuck in local maximum)
             if (kNumbOfChildren == 0) {
                 std::cout << "There are no more states to generate... (stuck in local maximum)\n";
                 return currNode;
             }
             
-            // get the SUCC comparison state (the first child)
+            // create the SUCC comparison state
             NodeBase* succNode = NULL;
             int succHvalue = INT_MIN;
 
