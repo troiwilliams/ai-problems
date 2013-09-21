@@ -1,5 +1,5 @@
-#ifndef SEARCH_ALGORITHM_H_
-#define SEARCH_ALGORITHM_H_
+#ifndef ALGORITHM_BASE_H_
+#define ALGORITHM_BASE_H_
 
 #include "../KnowledgeRep/NodeBase.h"
 #include "../KnowledgeRep/StateBase.h"
@@ -11,24 +11,22 @@
 
 namespace AI_Problems {
 
-    class SearchAlgorithm {
+    class AlgorithmBase {
     public:
         //! Constructor
-        SearchAlgorithm(const std::string& algorithmType, const std::string& problemType)
+        AlgorithmBase(const std::string& algorithmType, const std::string& problemType)
           : algorithmName(algorithmType),
             problemName(problemType),
             explored()
-        {
-            std::cout << "creating search algorithm\n";
-        }
+        { }
 
         //! Destructor
-        virtual ~SearchAlgorithm() {
+        virtual ~AlgorithmBase() {
             // remove all the explored stuff
         }
 
         //! Tries to find the solution and return the end node
-        //virtual NodeBase* search(NodeBase*) = 0;
+        virtual NodeBase* search(NodeBase*) = 0;
 
         //! Checks if a state already exists
         bool stateExists(StateBase*);
@@ -40,4 +38,4 @@ namespace AI_Problems {
     };
 }
 
-#endif // end of SEARCH_ALGORITHM_H_
+#endif // end of ALGORITHM_BASE_H_

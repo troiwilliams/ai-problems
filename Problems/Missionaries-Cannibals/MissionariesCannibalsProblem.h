@@ -59,14 +59,16 @@ namespace AI_Problems {
 
         //! The total number of people in each group
         static const int kEachGroupSize;
+
+        //! The maximum number of people that can fit in the boat at one time
         static const int kBoatCapacity;
 
         friend class MissCannNode;
 
     private:
 
-        int missOnLeft;     //!< The count of missionaries on the left side
-        int cannOnLeft;     //!< The count of cannibals on the left side
+        int missOnLeft;         //!< The count of missionaries on the left side
+        int cannOnLeft;         //!< The count of cannibals on the left side
         bool theBoatIsOnLeft;   //!< States if the boat is on the left or right side
     };
 

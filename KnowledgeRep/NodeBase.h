@@ -25,6 +25,8 @@ namespace AI_Problems {
 
         //! Destructor
         ~NodeBase() {
+            // untested
+            /*
             delete parent;
             parent = NULL;
             delete state;
@@ -33,6 +35,7 @@ namespace AI_Problems {
                 delete childrenNodes[0];
                 childrenNodes.erase(childrenNodes.begin());
             }
+            */
         }
 
         //! Copy constructor
@@ -83,8 +86,6 @@ namespace AI_Problems {
 
         //! Prints a node's data
         friend std::ostream& operator<<(std::ostream&, const NodeBase&);
-
-        friend class SearchAlgorithm;
 
     protected:
         NodeBase* parent;       //!< The node that generate this node (state that generate this state)

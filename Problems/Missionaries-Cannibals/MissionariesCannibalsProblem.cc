@@ -86,6 +86,7 @@ namespace AI_Problems {
     }
 
     NodeBase* MissCannNode::generateChildNode(StateBase* newState) {
+        // create a new instance of MissCannNode and return it
         return new MissCannNode(this, static_cast<MissCannState*>(newState));
     }
 
